@@ -141,6 +141,7 @@ void insert2Road_sort(int data[],int n)
 	{
 		data[j++]=buf[i];
 	}
+	free(buf);
 }
 
 void tableInsert_sort(int data[],int n){
@@ -177,6 +178,7 @@ void tableInsert_sort(int data[],int n){
 		next[j]=next[i];
 		next[i]=j;
 	}
+	free(next);
 }
 
 void showInts(int data[],int n){
@@ -252,7 +254,56 @@ void quick_sort(int data[],int n){
 	quick_partation(data,0,n-1);
 }
 
+void subMerge_sort(int data[],int l,int h,int buf[]){
+	if (l>=h)
+	{
+		return ;
+	}
 
+	int m=(h+l)/2;
+	if (m>l)
+	{
+		subMerge_sort(data,l,m,buf);
+	}
+	if (m+1<h)
+	{
+		subMerge_sort(data,m+1,h,buf);
+	}
+
+	int i=l;
+	int j=m+1;
+	int k=l;
+	while (i<=m && j<=h)
+	{
+		if (data[i]<data[j])
+		{
+			buf[k++]=data[i++];
+		}else{
+			buf[k++]=data[j++];
+		}
+	}
+	if (i<=m)
+	{
+		memcpy(buf+k,data+i,sizeof(int)*(m-i+1));
+	}
+	if (j<=h)
+	{
+		memcpy(buf+k,data+j,sizeof(int)*(h-j+1));
+	}
+
+	memcpy(data+l,buf+l,sizeof(int)*(h-l+1));
+}
+
+
+void merge_sort(int data[],int n){
+	int *buf=(int*)malloc(sizeof(int)*n);
+	subMerge_sort(data,0,n-1,buf);
+	free(buf);
+}
+
+void chose_sort(){
+
+}
 
 int main(){
 	int data[]={5,3,1,2,9,6};
