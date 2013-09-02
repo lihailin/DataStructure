@@ -208,9 +208,51 @@ void shell_sort(int data[],int n,int wd[],int m){
 	}
 }
 
-void quick_sort(int data[],int l,int h){
-	
+void quick_partation(int data[],int l,int h){
+	if (l>=h)
+	{
+		return ;
+	}
+
+	int i;
+	int j;
+	int middle;
+
+	middle=data[l];
+	i=l;
+	j=h;
+	while(i<j)
+	{
+		for (;i<j && data[j]>=middle;j--);
+		if (i<j)
+		{
+			data[i]=data[j];
+			i++;
+		}
+
+		for(;i<j && data[i]<=middle;i++);
+		if (i<j)
+		{
+			data[j]=data[i];
+			j--;
+		}
+	}
+
+	if (i-1>l)
+	{
+		quick_partation(data,l,i-1);
+	}	
+	if (i+1<h)
+	{
+		quick_partation(data,i+1,h);
+	}
 }
+
+void quick_sort(int data[],int n){
+	quick_partation(data,0,n-1);
+}
+
+
 
 int main(){
 	int data[]={5,3,1,2,9,6};
