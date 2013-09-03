@@ -6,22 +6,20 @@
 --------------------Configuration: DataStructure - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\javacpp\AppData\Local\Temp\RSP7D49.tmp" with contents
+Creating temporary file "C:\Users\javacpp\AppData\Local\Temp\RSP2976.tmp" with contents
 [
-kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/DataStructure.pdb" /debug /machine:I386 /out:"Debug/DataStructure.exe" /pdbtype:sept 
-".\Debug\sortAlgorithm.obj"
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/DataStructure.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\My_Documents\MyProject\C++\DataStructure\DataStructure\searchAlgorithm.cpp"
 ]
-Creating command line "link.exe @C:\Users\javacpp\AppData\Local\Temp\RSP7D49.tmp"
+Creating command line "cl.exe @C:\Users\javacpp\AppData\Local\Temp\RSP2976.tmp" 
 <h3>Output Window</h3>
-Linking...
-LIBCD.lib(crt0.obj) : error LNK2001: unresolved external symbol _main
-Debug/DataStructure.exe : fatal error LNK1120: 1 unresolved externals
-Ö´ÐÐ link.exe Ê±³ö´í.
+Compiling...
+searchAlgorithm.cpp
 
 
 
 <h3>Results</h3>
-DataStructure.exe - 1 error(s), 0 warning(s)
+searchAlgorithm.obj - 0 error(s), 0 warning(s)
 </pre>
 </body>
 </html>
