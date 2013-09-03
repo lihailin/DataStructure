@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include "Tree.h"
 using namespace std;
 
 int simple_search(int data[],int n,int key){
@@ -52,19 +52,6 @@ int binary_search(int data[],int n,int key){
 //	}
 //	return -1;
 // }
-
-enum Blacne{LH=-1,TIE,RH};
-
-struct tnode {
-	int data;
-	struct tnode *lchild;
-	struct tnode *rchild;
-	Blacne bw;
-};
-
-typedef struct tnode TNode;
-typedef struct tnode *Tree;
-typedef struct tnode *NodePos;
 
 TNode *binaryTree_search(Tree t,int key){
 	if (t->data==key)
